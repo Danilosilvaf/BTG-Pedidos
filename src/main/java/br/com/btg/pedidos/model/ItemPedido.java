@@ -15,6 +15,9 @@ public class ItemPedido {
 	
 	private double preco;
 	
+    @ManyToOne(optional=false)
+    private Pedido pedido;
+	
 	public ItemPedido() {
 	}
 	
