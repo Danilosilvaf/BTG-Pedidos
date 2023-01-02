@@ -1,0 +1,32 @@
+version: "3.6"
+
+services:
+    rabbitmq:
+        image: rabbitmq:3.10-management
+        container_name: rabbitmq2
+        restart: always
+        ports:
+            - 5672:5672
+            - 15672:15672
+        volumes:
+            - ./dados:/var/lib/rabbitmq/
+        environment:
+            - RABBITMQ_USER=danilo
+            - RABBITMQ_PASSWORD=admin
+
+    mongodb2:
+        image: mongo
+        restart: always
+        ports:
+            - "27017:27017"
+
+    mongo-express2:
+        image: mongo-express
+        restart: always
+        ports:
+            - 8081:8081
+        environment:
+            ME_CONFIG_MONGODB_SERVER: mongo
+            ME_CONFIG_MONGODB_ADMINUSERNAME: root
+            ME_CONFIG_MONGODB_ADMINPASSWORD: example
+            ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
