@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "c4497a6c-e35a-4fa9-99e0-e802a0aca32f",
+		"name": "BTG",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13136203"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"codigoPedido\": 1001,\n    \"codigoCliente\": 1,\n    \"itens\":[\n        {\n            \"produto\":\"lápis\",\n            \"quantidade\":\"100\",\n            \"preco\":\"1.10\"\n        },\n        {\n            \"produto\":\"caderno\",\n            \"quantidade\":\"10\",\n            \"preco\":\"1.00\"\n        }\n    ]\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/criarPedido",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"criarPedido"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/pedido/1001",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"pedido",
+						"1001"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
