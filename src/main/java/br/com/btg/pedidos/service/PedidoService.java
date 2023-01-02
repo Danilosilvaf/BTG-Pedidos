@@ -26,12 +26,12 @@ public class PedidoService {
                 .collect(Collectors.toList());
     }
 
-    public PedidoDto criarPedido(PedidoDto dto) {
-        Pedido pedido = modelMapper.map(dto, Pedido.class);
+    public PedidoDto criarPedido(PedidoDto pedido) {
+        Pedido pedido1 = modelMapper.map(pedido, Pedido.class);
 
-        pedido.getItens().forEach(item -> item.getClass());
-        Pedido salvo = repository.save(pedido);
+        pedido1.getItens().forEach(item -> item.getClass());
+        repository.save(pedido1);
 
-        return modelMapper.map(pedido, PedidoDto.class);
+        return modelMapper.map(pedido1, PedidoDto.class);
     }
 }

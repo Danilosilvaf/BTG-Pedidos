@@ -1,5 +1,10 @@
 package br.com.btg.pedidos.dto;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+@JsonSerialize
+@JsonDeserialize
 public class ItemPedidoDto {
 
     private String nome;

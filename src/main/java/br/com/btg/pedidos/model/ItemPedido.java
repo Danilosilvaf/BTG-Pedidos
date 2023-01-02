@@ -2,6 +2,13 @@ package br.com.btg.pedidos.model;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
+
+@JsonSerialize
+@JsonDeserialize
 @Entity
 @Table(name = "item_do_pedido")
 public class ItemPedido {
@@ -15,6 +22,7 @@ public class ItemPedido {
 	
 	private double preco;
 	
+	@JsonIgnore
     @ManyToOne(optional=false)
     private Pedido pedido;
 	
